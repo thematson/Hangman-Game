@@ -23,6 +23,7 @@ body {
 
 #banner  {
 	background-image: url("../images/disPrincessLogo.png");
+	z-index: 10;
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
