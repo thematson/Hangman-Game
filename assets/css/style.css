@@ -22,7 +22,7 @@ body {
 }
 
 #banner  {
-	background-image: url("../images/disPrincesslogo.png");
+	background-image: url("../images/disPrincessLogo.png");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -32,7 +32,7 @@ body {
 
 #displayside {
 	float: left;
-	background-image: url("../images/mirror.mirror.jpg");
+	background-image: url("../images/mirror-mirror.jpg");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
