@@ -33,7 +33,7 @@ body {
 
 #displayside {
 	float: left;
-	background-image: url("../images/mirror-mirror.jpg");
+/* 	background-image: url("../images/mirror-mirror.jpg"); */
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
