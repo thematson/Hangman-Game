@@ -25,8 +25,8 @@ var sub = 0;
 var winningWord = princesses[Math.floor(Math.random()*princesses.
 		length)];
 var text = " ";
-var audio = new Audio('assets/images/music.mp3');
-
+var audioWin = new Audio('assets/images/music.mp3');
+var audioLoss = new Audio('assets/images/loss.mp3');
 //reset function
 function resetStats () {
 	guessesLeft = 6;
@@ -35,17 +35,23 @@ function resetStats () {
 		length)];
 	emptyWord = [];
 	blanks();
-	
+};
+
+function delayRestart () {
+	location.reload();
+};
 	console.log(winningWord);
 	console.log("a reset has been called");
 	
 
-}
+
 // if word is guessed this function is called
 function winner () {
-	audio.play();
+
+//winning soundtrack
+	audioWin.play();
 	
-	
+//selects the winning image	
 	if (winningWord == princesses[0]) {
 		document.getElementById("displayside").innerHTML = "<img src='assets/images/cin-mirror.jpg'>"
 }
@@ -76,6 +82,10 @@ function winner () {
 	if (winningWord == princesses[9]) {
 		document.getElementById("displayside").innerHTML = "<img src='assets/images/belle-mirror.jpg'>"
 }
+	//alert box and reset
+	alert("You have chosen correctly!\nPlease press 'OK' and we will restart in 5 seconds");
+	setTimeout(delayRestart, 6000);
+	
 
 }
 
@@ -129,7 +139,11 @@ document.onkeyup = function() {
 			document.getElementById("blanks").innerHTML = (winningWord.join(' '));
 			document.getElementById("displayside").innerHTML = "<img src='assets/images/mal-mirror.jpg'>"
 			// alert("Mirror, Mirror on the wall, you are not the smartest of all\nPlease press OK to play again.");
+			audioLoss.play();
+			alert("You have chosen poorly!\nPlease press 'OK' and we will restart in 5 seconds");
+			setTimeout(delayRestart, 5000);
 			resetStats();
+
 
 		}
 		
